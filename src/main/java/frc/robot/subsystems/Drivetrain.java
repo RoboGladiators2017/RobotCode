@@ -8,7 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import frc.robot.RobotMap;
@@ -21,23 +21,23 @@ public class Drivetrain extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  // change Talon to TalonSRX in actual code, drivers for CAN motors only work on Windows computers
-  Talon leftFrontTalon = null;
-  Talon leftBackTalon = null;
-  Talon rightFrontTalon = null;
-  Talon rightBackTalon = null;
+  // change Spark to SparkSRX in actual code, drivers for CAN motors only work on Windows computers
+  Spark leftFrontSpark = null;
+  Spark leftBackSpark = null;
+  Spark rightFrontSpark = null;
+  Spark rightBackSpark = null;
 
   DifferentialDrive differentialDrive = null;
 
   public Drivetrain() {
-    // assign values to Talon variables
-    leftFrontTalon = new Talon(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON); // port numbers defined in RobotMap
-    leftFrontTalon = new Talon(RobotMap.DRIVETRAIN_LEFT_BACK_TALON);
-    rightFrontTalon = new Talon(RobotMap.DRIVETRAIN_RIGHT_FRONT_TALON); 
-    rightBackTalon = new Talon(RobotMap.DRIVETRAIN_RIGHT_BACK_TALON); 
+    // assign values to Spark variables
+    leftFrontSpark = new Spark(RobotMap.DRIVETRAIN_LEFT_FRONT_SPARK); // port numbers defined in RobotMap
+    leftFrontSpark = new Spark(RobotMap.DRIVETRAIN_LEFT_BACK_SPARK);
+    rightFrontSpark = new Spark(RobotMap.DRIVETRAIN_RIGHT_FRONT_SPARK); 
+    rightBackSpark = new Spark(RobotMap.DRIVETRAIN_RIGHT_BACK_SPARK); 
     
-    SpeedControllerGroup leftMotor = new SpeedControllerGroup(leftFrontTalon,leftBackTalon);
-    SpeedControllerGroup rightMotor = new SpeedControllerGroup(rightFrontTalon,rightBackTalon);
+    SpeedControllerGroup leftMotor = new SpeedControllerGroup(leftFrontSpark,leftBackSpark);
+    SpeedControllerGroup rightMotor = new SpeedControllerGroup(rightFrontSpark,rightBackSpark);
 
     differentialDrive = new DifferentialDrive(leftMotor, rightMotor);
   }
