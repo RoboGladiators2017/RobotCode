@@ -18,6 +18,7 @@ import frc.robot.commands.*;
  */
 public class OI {
 
+  
   public Joystick driverController = new Joystick(RobotMap.OI_DRIVER_CONTROLLER);
   
   // create buttons linked to each button on the controller
@@ -33,8 +34,8 @@ public class OI {
   Button D10 = new JoystickButton(driverController, 10);
 
   public OI() {
-    D1.whenPressed(new ShooterUp());
-    D2.whenPressed(new ShooterDown());
+    //D1.whenPressed(new ShooterUp());
+    //D2.whenPressed(new ShooterDown());
   }
 
   //// CREATING BUTTONS

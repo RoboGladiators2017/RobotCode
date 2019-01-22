@@ -7,7 +7,7 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
+//import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -23,23 +23,26 @@ public class Drivetrain extends Subsystem {
 
   // change Spark to SparkSRX in actual code, drivers for CAN motors only work on Windows computers
   Spark leftFrontSpark = null;
-  Spark leftBackSpark = null;
+  //Spark leftBackSpark = null;
   Spark rightFrontSpark = null;
-  Spark rightBackSpark = null;
+  //Spark rightBackSpark = null;
 
   DifferentialDrive differentialDrive = null;
 
   public Drivetrain() {
     // assign values to Spark variables
     leftFrontSpark = new Spark(RobotMap.DRIVETRAIN_LEFT_FRONT_SPARK); // port numbers defined in RobotMap
-    leftFrontSpark = new Spark(RobotMap.DRIVETRAIN_LEFT_BACK_SPARK);
+    //leftFrontSpark = new Spark(RobotMap.DRIVETRAIN_LEFT_BACK_SPARK);
     rightFrontSpark = new Spark(RobotMap.DRIVETRAIN_RIGHT_FRONT_SPARK); 
-    rightBackSpark = new Spark(RobotMap.DRIVETRAIN_RIGHT_BACK_SPARK); 
+    //rightBackSpark = new Spark(RobotMap.DRIVETRAIN_RIGHT_BACK_SPARK); 
     
-    SpeedControllerGroup leftMotor = new SpeedControllerGroup(leftFrontSpark,leftBackSpark);
-    SpeedControllerGroup rightMotor = new SpeedControllerGroup(rightFrontSpark,rightBackSpark);
+    // SpeedControllerGroup leftMotor = new SpeedControllerGroup(leftFrontSpark,leftBackSpark);
+    // SpeedControllerGroup rightMotor = new SpeedControllerGroup(rightFrontSpark,rightBackSpark);
 
-    differentialDrive = new DifferentialDrive(leftMotor, rightMotor);
+    //leftBackSpark.follow(leftFrontSpark);
+    //rightBackSpark.follow(rightFrontSpark);
+
+    differentialDrive = new DifferentialDrive(leftFrontSpark, rightFrontSpark);
   }
 
   public void arcadeDrive(double moveSpeed, double rotateSpeed) {

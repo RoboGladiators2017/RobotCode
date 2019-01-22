@@ -28,7 +28,7 @@ public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static Drivetrain m_drivetrain = null;
   public static OI m_oi;
-  public static Shooter m_shooter;
+  //public static Shooter m_shooter;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -41,7 +41,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_drivetrain = new Drivetrain();
     m_oi = new OI();
-    m_shooter = new Shooter();
+    //m_shooter = new Shooter();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);

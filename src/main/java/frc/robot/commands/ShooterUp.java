@@ -18,16 +18,16 @@ public class ShooterUp extends InstantCommand {
    * Add your docs here.
    */
   public ShooterUp() {
-    super();
+    //super();
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.m_shooter);
+    //requires(Robot.m_shooter);
   }
 
   // Called once when the command executes
   @Override
   protected void initialize() {
-    Robot.m_shooter.pitchUp();
+    //Robot.m_shooter.pitchUp();
   }
 
 }

@@ -22,16 +22,16 @@ public class Shooter extends Subsystem {
   // here. Call these from Commands.
 
   public Shooter() {
-    pitchSolenoid = new DoubleSolenoid(RobotMap.SHOOTER_PITCH_SOLENOID_FORWARD, RobotMap.SHOOTER_PITCH_SOLENOID_REVERSE);
+    //pitchSolenoid = new DoubleSolenoid(RobotMap.SHOOTER_PITCH_SOLENOID_FORWARD, RobotMap.SHOOTER_PITCH_SOLENOID_REVERSE);
   }
 
-  public void pitchUp() {
-    pitchSolenoid.set(Value.kForward);
-  }
+  //public void pitchUp() {
+  //  pitchSolenoid.set(Value.kForward);
+  //}
 
-  public void pitchDown() {
-    pitchSolenoid.set(Value.kReverse);
-  }
+  //public void pitchDown() {
+  //  pitchSolenoid.set(Value.kReverse);
+  //}
 
   @Override
   public void initDefaultCommand() {

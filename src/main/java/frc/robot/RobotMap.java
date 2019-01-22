@@ -20,20 +20,20 @@ public class RobotMap {
   // public static int leftMotor = 1;
   // public static int rightMotor = 2;
 
-  // Talons: 
-  public static final int DRIVETRAIN_LEFT_FRONT_TALON = 0;
-  public static final int DRIVETRAIN_LEFT_BACK_TALON = 1;
-  public static final int DRIVETRAIN_RIGHT_FRONT_TALON = 2;
-  public static final int DRIVETRAIN_RIGHT_BACK_TALON = 3;
+  // SPARKs: 
+  public static final int DRIVETRAIN_LEFT_FRONT_SPARK = 0;
+  public static final int DRIVETRAIN_LEFT_BACK_SPARK = 8;
+  public static final int DRIVETRAIN_RIGHT_FRONT_SPARK = 1;
+  public static final int DRIVETRAIN_RIGHT_BACK_SPARK = 9;
   // set the joystick value to the port number the joystick uses on the 
   // laptop (this can be found in the Driverstation software):
-  public static final int OI_DRIVER_CONTROLLER = 4;
-  public static final int DRIVER_CONTROLLER_MOVE_AXIS = 5;
-  public static final int DRIVER_CONTROLLER_ROTATE_AXIS = 6;
+  public static final int OI_DRIVER_CONTROLLER = 0;
+  public static final int DRIVER_CONTROLLER_MOVE_AXIS = 1;
+  public static final int DRIVER_CONTROLLER_ROTATE_AXIS = 5;
   
   // ports for solenoid:
-  public static final int SHOOTER_PITCH_SOLENOID_FORWARD = 7;
-  public static final int SHOOTER_PITCH_SOLENOID_REVERSE = 8;
+  //public static final int SHOOTER_PITCH_SOLENOID_FORWARD = 7;
+  //public static final int SHOOTER_PITCH_SOLENOID_REVERSE = 8;
 
   
   
