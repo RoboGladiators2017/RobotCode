@@ -23,6 +23,7 @@ public class SpinTheMotor extends Command {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
       requires(Robot.m_spinmotor);
+      requires(Robot.m_limitswitch);
   }
 
   // Called once when the command executes
@@ -33,14 +34,12 @@ public class SpinTheMotor extends Command {
   @Override
   protected void execute() {
     double rightTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
-  double leftTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_CLOCKWISE);
+    double leftTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_CLOCKWISE);
     Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
-    
-
-/*if()
-{
-
-}*/
+    if(Robot.m_limitswitch.limitSwitch.get() == true)
+    { 
+      end();
+    }
 
   }
   @Override
