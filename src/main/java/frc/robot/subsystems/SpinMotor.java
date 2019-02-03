@@ -37,7 +37,7 @@ public SpinMotor(SpeedController SpinmMotor) {
 */
     }
    
-    public void Spin(float SpinValue){
+    public void Spin(double SpinValue){
         SpinMotor1.set(SpinValue);
 
     }

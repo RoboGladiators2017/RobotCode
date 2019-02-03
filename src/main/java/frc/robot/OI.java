@@ -29,16 +29,16 @@ public class OI {
   Button D4 = new JoystickButton(driverController, 4);
   Button D5 = new JoystickButton(driverController, 5);
   Button D6 = new JoystickButton(driverController, 6);
-  Button D7 = new JoystickButton(driverController, 7);
-  Button D8 = new JoystickButton(driverController, 8);
-  Button D9 = new JoystickButton(driverController, 9);
-  Button D10 = new JoystickButton(driverController, 10);
+  //Button D7 = new JoystickButton(driverController, 7);
+  //Button D8 = new JoystickButton(driverController, 8);
+  //Button D9 = new JoystickButton(driverController, 9);
+  //Button D10 = new JoystickButton(driverController, 10);
 
   public OI() {
     //D1.whenPressed(new ShooterUp());
       //D2.whenPressed(new ShooterDown());
-     D3.whenPressed(new SpinTheMotor());
-     D2.whileHeld(new SpinTheMotorBack());
+   //  D7.whenPressed(new SpinTheMotor());
+     //D6.whenPressed(new SpinTheMotorBack());
   }
 
   //// CREATING BUTTONS

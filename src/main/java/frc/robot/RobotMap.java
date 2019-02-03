@@ -31,7 +31,8 @@ public class RobotMap {
   public static final int OI_DRIVER_CONTROLLER = 0;
   public static final int DRIVER_CONTROLLER_MOVE_AXIS = 1;
   public static final int DRIVER_CONTROLLER_ROTATE_AXIS = 5;
-  
+  public static final int DRIVER_CONTROLLER_CLOCKWISE = 2;
+  public static final int DRIVER_CONTROLLER_COUNTERCLOCKWISE = 3;
   // ports for solenoid:
   //public static final int SHOOTER_PITCH_SOLENOID_FORWARD = 7;
   //public static final int SHOOTER_PITCH_SOLENOID_REVERSE = 8;

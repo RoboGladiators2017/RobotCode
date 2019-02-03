@@ -9,6 +9,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
@@ -31,7 +32,16 @@ public class SpinTheMotor extends Command {
   }
   @Override
   protected void execute() {
-    Robot.m_spinmotor.Spin(1);
+    double rightTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
+  double leftTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_CLOCKWISE);
+    Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
+    
+
+/*if()
+{
+
+}*/
+
   }
   @Override
   protected boolean isFinished() {
