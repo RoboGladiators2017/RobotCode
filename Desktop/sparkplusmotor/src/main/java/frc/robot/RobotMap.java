@@ -38,7 +38,7 @@ public class RobotMap {
   //public static final int SHOOTER_PITCH_SOLENOID_REVERSE = 8;
 
   //spin motor
-  public static final int SPINMOTOR_SPIN_MOTOR_1_PWMVICTORSPX = 3;
+  public static final int SPINMOTOR_SPIN_MOTOR_1_TALONSRX1 = 1;
   
 
   // If you are using multiple modules, make sure to define both the port

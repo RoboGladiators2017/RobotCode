@@ -7,8 +7,14 @@
 
 package frc.robot.subsystems;
 import frc.robot.RobotMap;
+
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 import edu.wpi.first.wpilibj.PWMVictorSPX;
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Talon;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.commands.SpinTheMotor;
 
@@ -22,11 +28,11 @@ public class SpinMotor extends Subsystem {
         SpinMotor1 = new Victor(RobotMap.SPINMOTOR_SPIN_MOTOR_1_VICTOR);
     }
     */
-    PWMVictorSPX SpinMotor1 = null;
+    public TalonSRX SpinMotor1 = null;
 
     public SpinMotor(){
     //PWMVictorSPX SpinMotor1 = new PWMVictorSPX(3);
-    SpinMotor1 = new PWMVictorSPX(RobotMap.SPINMOTOR_SPIN_MOTOR_1_PWMVICTORSPX);
+    SpinMotor1 = new TalonSRX(RobotMap.SPINMOTOR_SPIN_MOTOR_1_TALONSRX1);
     
   /* SpeedController spinTalonSRX = null;
     SpeedControllerGroup SpinMotor  new SpeedControllerGroup(SPINMOTOR_SPINTALON_TALON)
@@ -38,7 +44,7 @@ public SpinMotor(SpeedController SpinmMotor) {
     }
    
     public void Spin(double SpinValue){
-        SpinMotor1.set(SpinValue);
+        SpinMotor1.set(ControlMode.PercentOutput, SpinValue);
 
     }
             

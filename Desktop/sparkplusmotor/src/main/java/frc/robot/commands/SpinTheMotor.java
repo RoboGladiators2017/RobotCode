@@ -36,11 +36,14 @@ public class SpinTheMotor extends Command {
     double rightTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
     double leftTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_CLOCKWISE);
     Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
-  
-      if(rightTriggerSpeed > 0){
+
+    if(rightTriggerSpeed > 0){
         System.out.println(""+rightTriggerSpeed+" "+leftTriggerSpeed);
       }
-   
+    /*if(rightTriggerSpeed < 0){
+        System.out.println(""+rightTriggerSpeed+" "+leftTriggerSpeed);
+      }
+*/
     //if(Robot.m_limitswitch.limitSwitch.get() == true)
     //{ 
       //end();

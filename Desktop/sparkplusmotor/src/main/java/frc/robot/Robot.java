@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Command;
@@ -47,9 +49,11 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_drivetrain = new Drivetrain();
     m_spinmotor = new SpinMotor();
+
     m_limitswitch = new LimitSwitch();
     m_oi = new OI();
     //m_shooter = new Shooter();
+    m_spinmotor.SpinMotor1.set(ControlMode.PercentOutput,0);
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
