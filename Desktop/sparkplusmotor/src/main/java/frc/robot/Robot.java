@@ -21,6 +21,7 @@ import frc.robot.subsystems.ExampleSubsystem;
 //import frc.robot.subsystems.LimitSwitch;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.SpinMotor;
+import edu.wpi.first.wpilibj.CameraServer;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -47,6 +48,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    CameraServer.getInstance().startAutomaticCapture();
+
     m_drivetrain = new Drivetrain();
     m_spinmotor = new SpinMotor();
 
