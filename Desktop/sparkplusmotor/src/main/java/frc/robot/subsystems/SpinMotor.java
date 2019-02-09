@@ -7,7 +7,8 @@
 
 package frc.robot.subsystems;
 import frc.robot.RobotMap;
-
+import edu.first.wpilibj.Counter;
+import edu.first.wpilibj.DigitalInput;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
@@ -28,6 +29,7 @@ public class SpinMotor extends Subsystem {
         SpinMotor1 = new Victor(RobotMap.SPINMOTOR_SPIN_MOTOR_1_VICTOR);
     }
     */
+    DigitalInput limitSwitch =  new DigitalInput(LIMIT_SWITCH_1);
     public TalonSRX SpinMotor1 = null;
 
     public SpinMotor(){
@@ -42,11 +44,20 @@ public SpinMotor(SpeedController SpinmMotor) {
   }
 */
     }
+    
+    public boolean isSwitchSet() {
+        return counter.get() > 0;
+    }
+
+    public void initializeCounter() {
+        counter.reset();
+    }
    
     public void Spin(double SpinValue){
         SpinMotor1.set(ControlMode.PercentOutput, SpinValue);
 
     }
+   
             
     @Override
     protected void initDefaultCommand() {

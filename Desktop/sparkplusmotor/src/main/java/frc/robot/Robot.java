@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.ExampleSubsystem;
-import frc.robot.subsystems.LimitSwitch;
+//import frc.robot.subsystems.LimitSwitch;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.SpinMotor;
 
@@ -34,7 +34,7 @@ public class Robot extends TimedRobot {
   public static Drivetrain m_drivetrain = null;
   public static OI m_oi;
   public static SpinMotor m_spinmotor = null;
-  public static LimitSwitch m_limitswitch = null;
+ // public static LimitSwitch m_limitswitch = null;
 
   //public static Shooter m_shooter;
 
@@ -50,7 +50,7 @@ public class Robot extends TimedRobot {
     m_drivetrain = new Drivetrain();
     m_spinmotor = new SpinMotor();
 
-    m_limitswitch = new LimitSwitch();
+    //m_limitswitch = new LimitSwitch();
     m_oi = new OI();
     //m_shooter = new Shooter();
     m_spinmotor.SpinMotor1.set(ControlMode.PercentOutput,0);

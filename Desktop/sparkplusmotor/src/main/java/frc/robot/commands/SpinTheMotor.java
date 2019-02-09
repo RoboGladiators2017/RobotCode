@@ -29,7 +29,7 @@ public class SpinTheMotor extends Command {
   // Called once when the command executes
   @Override
   protected void initialize() {
-    
+    Robot.m_spinmotor.initializeCounter();
   }
   @Override
   protected void execute() {
@@ -37,9 +37,9 @@ public class SpinTheMotor extends Command {
     double leftTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_CLOCKWISE);
     Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
 
-    if(rightTriggerSpeed > 0){
+    if(rightTriggerSpeed > 0) {
         System.out.println(""+rightTriggerSpeed+" "+leftTriggerSpeed);
-      }
+    }
     /*if(rightTriggerSpeed < 0){
         System.out.println(""+rightTriggerSpeed+" "+leftTriggerSpeed);
       }
@@ -52,7 +52,7 @@ public class SpinTheMotor extends Command {
   }
   @Override
   protected boolean isFinished() {
-    return false;
+    return Robot.m_spinmotor.isSwitchSet();
   }
 
   // Called once after isFinished returns true
