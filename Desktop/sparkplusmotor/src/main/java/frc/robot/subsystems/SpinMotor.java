@@ -29,7 +29,8 @@ public class SpinMotor extends Subsystem {
         SpinMotor1 = new Victor(RobotMap.SPINMOTOR_SPIN_MOTOR_1_VICTOR);
     }
     */
-    DigitalInput limitSwitch =  new DigitalInput(RobotMap.LIMIT_SWITCH_1);
+    DigitalInput limitSwitchTop =  new DigitalInput(RobotMap.LIMIT_SWITCH_TOP);
+    DigitalInput limitSwitchBottom =  new DigitalInput(RobotMap.LIMIT_SWITCH_BOTTOM);
     public TalonSRX SpinMotor1 = null;
     //Counter counter = new Counter(limitSwitch);
 
@@ -46,10 +47,17 @@ public SpinMotor(SpeedController SpinmMotor) {
 */
     }
     
-    public boolean isSwitchSet() {
+    public boolean isTopSwitchSet() {
         //int valueOfSwitch = counter.get();
-        boolean valueOfSwitch = limitSwitch.get();
-        System.out.println("value of the limit switch "+valueOfSwitch);
+        boolean valueOfSwitch = limitSwitchTop.get();
+        System.out.println("value of the Top limit switch "+valueOfSwitch);
+        //return valueOfSwitch > 0;
+        return valueOfSwitch;
+    }
+    public boolean isBottomSwitchSet() {
+        //int valueOfSwitch = counter.get();
+        boolean valueOfSwitch = limitSwitchBottom.get();
+        System.out.println("value of the Bottom limit switch "+valueOfSwitch);
         //return valueOfSwitch > 0;
         return valueOfSwitch;
     }

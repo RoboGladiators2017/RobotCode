@@ -41,11 +41,13 @@ public class SpinTheMotor extends Command {
       System.out.println("" + rightTriggerSpeed + " " + leftTriggerSpeed);
     }
 
-    if (Robot.m_spinmotor.isSwitchSet()) {
-      Robot.m_spinmotor.Spin(0);
+    if (Robot.m_spinmotor.isTopSwitchSet()) {
+     // Robot.m_spinmotor.Spin(0);
+      Robot.m_spinmotor.Spin(leftTriggerSpeed);
     }
-    else{
-      Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
+    else if(Robot.m_spinmotor.isBottomSwitchSet()) {
+     // Robot.m_spinmotor.Spin(0);
+      Robot.m_spinmotor.Spin(-rightTriggerSpeed);
     }
     
     // if()

@@ -39,7 +39,8 @@ public class RobotMap {
 
   //spin motor
   public static final int SPINMOTOR_SPIN_MOTOR_1_TALONSRX1 = 1;
-  public static final int LIMIT_SWITCH_1 =1;
+  public static final int LIMIT_SWITCH_TOP =1;
+  public static final int LIMIT_SWITCH_BOTTOM =2;
   // If you are using multiple modules, make sure to define both the port
   // number and the module. For example you with a rangefinder:
   // public static int rangefinderPort = 1;
