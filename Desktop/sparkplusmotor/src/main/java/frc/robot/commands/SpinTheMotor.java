@@ -19,11 +19,11 @@ public class SpinTheMotor extends Command {
    * Add your docs here.
    */
   public SpinTheMotor() {
-    //super();
+    // super();
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-      requires(Robot.m_spinmotor);
-    //  requires(Robot.m_limitswitch);
+    requires(Robot.m_spinmotor);
+    // requires(Robot.m_limitswitch);
   }
 
   // Called once when the command executes
@@ -31,28 +31,39 @@ public class SpinTheMotor extends Command {
   protected void initialize() {
     Robot.m_spinmotor.initializeCounter();
   }
+
   @Override
   protected void execute() {
     double rightTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
     double leftTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_CLOCKWISE);
-    Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
 
-    if(rightTriggerSpeed > 0) {
-        System.out.println(""+rightTriggerSpeed+" "+leftTriggerSpeed);
+    if (rightTriggerSpeed > 0) {
+      System.out.println("" + rightTriggerSpeed + " " + leftTriggerSpeed);
     }
-    /*if(rightTriggerSpeed < 0){
-        System.out.println(""+rightTriggerSpeed+" "+leftTriggerSpeed);
-      }
-*/
-    //if(Robot.m_limitswitch.limitSwitch.get() == true)
-    //{ 
-      //end();
-    //}
+
+    if (Robot.m_spinmotor.isSwitchSet()) {
+      Robot.m_spinmotor.Spin(0);
+    }
+    else{
+      Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
+    }
+    
+    // if()
+    /*
+     * if(rightTriggerSpeed < 0){
+     * System.out.println(""+rightTriggerSpeed+" "+leftTriggerSpeed); }
+     */
+    // if(Robot.m_limitswitch.limitSwitch.get() == true)
+    // {
+    // end();
+    // }
 
   }
+
   @Override
   protected boolean isFinished() {
-    return Robot.m_spinmotor.isSwitchSet();
+    return false;
+    // return Robot.m_spinmotor.isSwitchSet();
   }
 
   // Called once after isFinished returns true
@@ -60,7 +71,7 @@ public class SpinTheMotor extends Command {
   protected void end() {
     Robot.m_spinmotor.Spin(0);
   }
-  
+
   @Override
   protected void interrupted() {
     end();
