@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class IntakeBallIn extends Command {
   public IntakeBallIn() {
     // Use requires() here to declare subsystem dependencies
-     requires(Robot.m_intake);
+    requires(Robot.m_intake);
   }
 
   // Called just before this Command runs the first time
@@ -25,7 +25,7 @@ public class IntakeBallIn extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_intake.Speed(-1);
+    Robot.m_intake.Speed(-1); // might want to change speed to be slower if we don't need this much power for in or out
   }
 
   // Make this return true when this Command no longer needs to run execute()

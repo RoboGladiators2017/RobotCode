@@ -36,7 +36,7 @@ public class OI {
 
   public OI() {
     D3.whileHeld(new IntakeBallIn());
-      D2.whenPressed(new IntakeBallOut());
+    D2.whileHeld(new IntakeBallOut());
    //  D7.whenPressed(new SpinTheMotor());
      //D6.whenPressed(new SpinTheMotorBack());
   }

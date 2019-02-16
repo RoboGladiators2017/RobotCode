@@ -33,13 +33,14 @@ import frc.robot.subsystems.Intake;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
-  public static OI m_oi;
+  //public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static Drivetrain m_drivetrain = null;
-  public static SpinMotor m_spinmotor = null;
  // public static LimitSwitch m_limitswitch = null;
   public static Intake m_intake = null;  
   //public static Shooter m_shooter;
+  public static OI m_oi;
+  public static SpinMotor m_spinmotor = null;
+
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();

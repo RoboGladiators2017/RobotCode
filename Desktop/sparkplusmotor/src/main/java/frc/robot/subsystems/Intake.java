@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.PWMVictorSPX;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import frc.robot.RobotMap;
-import frc.robot.commands.IntakeBallDefault;;
+//import frc.robot.commands.IntakeBallDefault;;
 
 /**
  * Add your docs here.
@@ -21,21 +21,21 @@ public class Intake extends Subsystem {
   // here. Call these from Commands.
 public PWMVictorSPX Intake1 = null;
 public PWMVictorSPX Intake2 = null;
-public SpeedControllerGroup motors = new SpeedControllerGroup(Intake1, Intake2);
+
 public Intake () {
   Intake1 = new PWMVictorSPX(RobotMap.INTAKE_MOTOR_PWMVICTORSPX_1);
   Intake2 = new PWMVictorSPX(RobotMap.INTAKE_MOTOR_PWMVICTORSPX_2);
-  
 }
 
 
 public void Speed(double spinSpeed){
-  motors.set(spinSpeed);
-
+  //motors.set(spinSpeed);
+  Intake1.set(spinSpeed);
+  Intake2.set(-spinSpeed); // might need to make Intake1 take the negative value if button for input actually makes ball go out
 }
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(new IntakeBallDefault());
+    //setDefaultCommand(new IntakeBallDefault());
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }

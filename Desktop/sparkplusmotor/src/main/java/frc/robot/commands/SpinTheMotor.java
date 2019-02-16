@@ -48,24 +48,22 @@ public class SpinTheMotor extends Command {
 }*/
     if (!(Robot.m_spinmotor.isTopSwitchSet()) && !(Robot.m_spinmotor.isBottomSwitchSet())) {
       // Robot.m_spinmotor.Spin(0);
-      
       Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
     }
-    
-     else if ((Robot.m_spinmotor.isTopSwitchSet() && !(Robot.m_spinmotor.isBottomSwitchSet()))) {
+    else if ((Robot.m_spinmotor.isTopSwitchSet() && !(Robot.m_spinmotor.isBottomSwitchSet()))) {
       // Robot.m_spinmotor.Spin(0);
       leftTriggerSpeed = 0;
       Robot.m_spinmotor.Spin(-rightTriggerSpeed);
     }
     else if ((!(Robot.m_spinmotor.isTopSwitchSet()) && Robot.m_spinmotor.isBottomSwitchSet())) {
-     rightTriggerSpeed = 0;
+      rightTriggerSpeed = 0;
       Robot.m_spinmotor.Spin(leftTriggerSpeed);
     }  
     else {
       Robot.m_spinmotor.Spin(0);
       return;
     }
-    Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
+    Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed); //test with and without this line. does the motor twitch?
 
     /*
      * if(rightTriggerSpeed < 0){
