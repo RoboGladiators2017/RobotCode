@@ -35,8 +35,18 @@ public class OI {
   //Button D10 = new JoystickButton(driverController, 10);
 
   public OI() {
-    D3.whileHeld(new IntakeBallIn());
-    D2.whileHeld(new IntakeBallOut());
+    // OPTION 1: try using toggleWhenPressed (see documentation online: http://first.wpi.edu/FRC/roborio/beta/docs/java/edu/wpi/first/wpilibj/buttons/Button.html#toggleWhenPressed-edu.wpi.first.wpilibj.command.Command-)
+    D1.toggleWhenPressed(new IntakeBallIn());
+    D2.toggleWhenPressed(new IntakeBallOut());
+
+    // OPTION 2: use a set of buttons, one to start and one to stop
+    /*IntakeBallIn ballIn = new IntakeBallIn();
+    IntakeBallOut ballOut = new IntakeBallOut();
+    D3.whenPressed(ballIn);
+    D2.whenPressed(ballOut);
+    D1.cancelWhenPressed(ballIn);
+    D4.cancelWhenPressed(ballOut);*/
+    //D1.cancelWhenPressed(new IntakeBallIn());
    //  D7.whenPressed(new SpinTheMotor());
      //D6.whenPressed(new SpinTheMotorBack());
   }

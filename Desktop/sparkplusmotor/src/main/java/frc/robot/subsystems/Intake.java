@@ -30,8 +30,8 @@ public Intake () {
 
 public void Speed(double spinSpeed){
   //motors.set(spinSpeed);
-  Intake1.set(spinSpeed);
-  Intake2.set(-spinSpeed); // might need to make Intake1 take the negative value if button for input actually makes ball go out
+  Intake1.set(0.5*spinSpeed);
+  Intake2.set(-0.5*spinSpeed); // might need to make Intake1 take the negative value if button for input actually makes ball go outit add
 }
   @Override
   public void initDefaultCommand() {

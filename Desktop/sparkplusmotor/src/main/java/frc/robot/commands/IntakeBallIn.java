@@ -11,6 +11,7 @@ import frc.robot.*;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
+
 public class IntakeBallIn extends Command {
   public IntakeBallIn() {
     // Use requires() here to declare subsystem dependencies
@@ -25,7 +26,7 @@ public class IntakeBallIn extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_intake.Speed(-1); // might want to change speed to be slower if we don't need this much power for in or out
+    Robot.m_intake.Speed(-1); // might want to change speed to be slower if we don't need this much power for in or outi
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -37,11 +38,13 @@ public class IntakeBallIn extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.m_intake.Speed(0);
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }
