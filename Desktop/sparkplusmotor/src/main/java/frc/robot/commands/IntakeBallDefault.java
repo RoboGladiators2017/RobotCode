@@ -7,52 +7,49 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
-
+import frc.robot.OI;
+import frc.robot.subsystems.*;
 /**
  * Add your docs here.
  */
-  public class SpinTheMotorBack extends Command {
+public class IntakeBallDefault extends InstantCommand {
   /**
    * Add your docs here.
    */
-  public SpinTheMotorBack() {
-    //super();
+  public IntakeBallDefault() {
+    requires(Robot.m_intake);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.m_spinmotor);
   }
 
   // Called once when the command executes
-
   @Override
   protected void initialize() {
-    
+    Robot.m_intake.Speed(0);
   }
-  @Override
+
   protected void execute() {
-    double rotateMotorSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
-    Robot.m_spinmotor.Spin(-rotateMotorSpeed);
-    
+//   if ( Robot.m_oi.D3.whileHeld()) {
+
+    //}
     
   }
+
   @Override
   protected boolean isFinished() {
     return false;
   }
-
-  // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_spinmotor.Spin(0);
-  }
-  @Override
-  protected void interrupted() {
-  
-    end();
+    Robot.m_intake.Speed(0);
   }
 
+  @Override
+  protected void interrupted() {
+    end();
+  }
 }
+
 

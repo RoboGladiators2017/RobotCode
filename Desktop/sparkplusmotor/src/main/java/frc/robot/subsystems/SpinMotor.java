@@ -24,7 +24,8 @@ import frc.robot.commands.SpinTheMotor;
  */
 
 public class SpinMotor extends Subsystem {
-    /*public  SpinMotor1(){
+
+	/*public  SpinMotor1(){
         Victor SpinMotor1 =null;
         SpinMotor1 = new Victor(RobotMap.SPINMOTOR_SPIN_MOTOR_1_VICTOR);
     }

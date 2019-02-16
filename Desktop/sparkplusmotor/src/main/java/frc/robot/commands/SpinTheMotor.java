@@ -10,6 +10,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
+import frc.robot.subsystems.*;
 
 /**
  * Add your docs here.
@@ -37,20 +38,35 @@ public class SpinTheMotor extends Command {
     double rightTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
     double leftTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_CLOCKWISE);
 
-    if (rightTriggerSpeed > 0) {
+    if (-rightTriggerSpeed < 0) {
       System.out.println("" + rightTriggerSpeed + " " + leftTriggerSpeed);
     }
+   // Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
+/*if (leftTriggerSpeed >0 && -rightTriggerSpeed > 0) {
+  Robot.m_spinmotor.Spin(0);
 
-    if (Robot.m_spinmotor.isTopSwitchSet()) {
-     // Robot.m_spinmotor.Spin(0);
-      Robot.m_spinmotor.Spin(leftTriggerSpeed);
-    }
-    else if(Robot.m_spinmotor.isBottomSwitchSet()) {
-     // Robot.m_spinmotor.Spin(0);
-      Robot.m_spinmotor.Spin(-rightTriggerSpeed);
+}*/
+    if (!(Robot.m_spinmotor.isTopSwitchSet()) && !(Robot.m_spinmotor.isBottomSwitchSet())) {
+      // Robot.m_spinmotor.Spin(0);
+      
+      Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
     }
     
-    // if()
+     else if ((Robot.m_spinmotor.isTopSwitchSet() && !(Robot.m_spinmotor.isBottomSwitchSet()))) {
+      // Robot.m_spinmotor.Spin(0);
+      leftTriggerSpeed = 0;
+      Robot.m_spinmotor.Spin(-rightTriggerSpeed);
+    }
+    else if ((!(Robot.m_spinmotor.isTopSwitchSet()) && Robot.m_spinmotor.isBottomSwitchSet())) {
+     rightTriggerSpeed = 0;
+      Robot.m_spinmotor.Spin(leftTriggerSpeed);
+    }  
+    else {
+      Robot.m_spinmotor.Spin(0);
+      return;
+    }
+    Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
+
     /*
      * if(rightTriggerSpeed < 0){
      * System.out.println(""+rightTriggerSpeed+" "+leftTriggerSpeed); }

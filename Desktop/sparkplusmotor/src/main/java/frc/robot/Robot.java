@@ -22,6 +22,8 @@ import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.SpinMotor;
 import edu.wpi.first.wpilibj.CameraServer;
+import frc.robot.subsystems.Intake;
+  
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -32,11 +34,11 @@ import edu.wpi.first.wpilibj.CameraServer;
  */
 public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
-  public static Drivetrain m_drivetrain = null;
   public static OI m_oi;
+  public static Drivetrain m_drivetrain = null;
   public static SpinMotor m_spinmotor = null;
  // public static LimitSwitch m_limitswitch = null;
-
+  public static Intake m_intake = null;  
   //public static Shooter m_shooter;
 
   Command m_autonomousCommand;
@@ -48,13 +50,15 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    CameraServer.getInstance().startAutomaticCapture();
+    //CameraServer.getInstance().startAutomaticCapture();
 
     m_drivetrain = new Drivetrain();
     m_spinmotor = new SpinMotor();
+    m_intake = new Intake();
 
     //m_limitswitch = new LimitSwitch();
     m_oi = new OI();
+   
     //m_shooter = new Shooter();
     m_spinmotor.SpinMotor1.set(ControlMode.PercentOutput,0);
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());

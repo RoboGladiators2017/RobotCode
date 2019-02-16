@@ -51,6 +51,7 @@ public class Drivetrain extends Subsystem {
 
   @Override
   public void initDefaultCommand() { 
+    System.out.println("jjkj");
     setDefaultCommand(new DriveArcade());
 
     // runs automatically everytime the subsystem is called

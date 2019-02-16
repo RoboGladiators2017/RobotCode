@@ -7,37 +7,28 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.*;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.command.Command;
 
-/**
- * Add your docs here.
- */
-  public class SpinTheMotorBack extends Command {
-  /**
-   * Add your docs here.
-   */
-  public SpinTheMotorBack() {
-    //super();
+public class IntakeBallIn extends Command {
+  public IntakeBallIn() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
-    requires(Robot.m_spinmotor);
+     requires(Robot.m_intake);
   }
 
-  // Called once when the command executes
-
+  // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    
   }
+
+  // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double rotateMotorSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
-    Robot.m_spinmotor.Spin(-rotateMotorSpeed);
-    
-    
+    Robot.m_intake.Speed(-1);
   }
+
+  // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
     return false;
@@ -46,13 +37,11 @@ import frc.robot.RobotMap;
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_spinmotor.Spin(0);
   }
+
+  // Called when another command which requires one or more of the same
+  // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-  
-    end();
   }
-
 }
-

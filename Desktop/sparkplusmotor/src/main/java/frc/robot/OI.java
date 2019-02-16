@@ -35,8 +35,8 @@ public class OI {
   //Button D10 = new JoystickButton(driverController, 10);
 
   public OI() {
-    //D1.whenPressed(new ShooterUp());
-      //D2.whenPressed(new ShooterDown());
+    D3.whileHeld(new IntakeBallIn());
+      D2.whenPressed(new IntakeBallOut());
    //  D7.whenPressed(new SpinTheMotor());
      //D6.whenPressed(new SpinTheMotorBack());
   }
