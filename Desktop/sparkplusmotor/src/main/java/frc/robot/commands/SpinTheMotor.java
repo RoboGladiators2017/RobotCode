@@ -37,8 +37,8 @@ public class SpinTheMotor extends Command {
   protected void execute() {
     double rightTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
     double leftTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_CLOCKWISE);
-    rightTriggerSpeed = rightTriggerSpeed*0.2;
-    leftTriggerSpeed = leftTriggerSpeed*0.2;
+    rightTriggerSpeed = rightTriggerSpeed*0.4;
+    leftTriggerSpeed = leftTriggerSpeed*0.4;
 
     if (-rightTriggerSpeed < 0) {
       System.out.println("" + rightTriggerSpeed + " " + leftTriggerSpeed);
