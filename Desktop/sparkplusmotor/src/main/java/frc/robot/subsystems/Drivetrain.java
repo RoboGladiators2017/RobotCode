@@ -47,6 +47,22 @@ public class Drivetrain extends Subsystem {
   }
 
   public void arcadeDrive(double moveSpeed, double rotateSpeed) {
+    // square the values of moveSpeed and rotateSpeed to dampen
+    // keep negative values negative
+    if(moveSpeed < 0) {
+      moveSpeed = - moveSpeed * moveSpeed;
+    }
+    else {
+      moveSpeed = moveSpeed * moveSpeed;
+    }
+
+    if(rotateSpeed < 0) {
+      rotateSpeed = - rotateSpeed * rotateSpeed;
+    }
+    else {
+      rotateSpeed = rotateSpeed * rotateSpeed;
+    }
+
     differentialDrive.arcadeDrive(moveSpeed, rotateSpeed);
   }
 
