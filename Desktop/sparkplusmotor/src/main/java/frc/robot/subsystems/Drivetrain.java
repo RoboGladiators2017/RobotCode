@@ -23,23 +23,27 @@ public class Drivetrain extends Subsystem {
   // here. Call these from Commands.
 
   // change Spark to SparkSRX in actual code, drivers for CAN motors only work on Windows computers
-  PWMVictorSPX leftFrontPWMVICTORSPX = null;
-  //Spark leftBackSpark = null;
-  PWMVictorSPX rightFrontPWMVICTORSPX = null;
-  //Spark rightBackSpark = null;
+  
+  // use the following two lines for new robot:
+  //PWMVictorSPX leftController = null;
+  //PWMVictorSPX rightController = null;
+
+  // use the following two lines for old robot:
+  Spark leftController = null;
+  Spark rightController = null;
 
   DifferentialDrive differentialDrive = null;
 
   public Drivetrain() {
     // use following lines for new robot:
-    //leftFrontPWMVICTORSPX = new PWMVictorSPX(RobotMap.DRIVETRAIN_LEFT_FRONT_PWMVICTORSPX); // port numbers defined in RobotMap
-    //rightFrontPWMVICTORSPX = new PWMVictorSPX(RobotMap.DRIVETRAIN_RIGHT_FRONT_PWMVICTORSPX); 
+    //leftController = new PWMVictorSPX(RobotMap.DRIVETRAIN_LEFT_FRONT_PWMVICTORSPX); // port numbers defined in RobotMap
+    //rightController = new PWMVictorSPX(RobotMap.DRIVETRAIN_RIGHT_FRONT_PWMVICTORSPX); 
 
     // use following lines for old robot:
-    leftFrontPWMVICTORSPX = new Spark(RobotMap.DRIVETRAIN_LEFT_FRONT_PWMVICTORSPX);
-    rightFrontPWMVICTORSPX = new Spark(RobotMap.DRIVETRAIN_RIGHT_FRONT_PWMVICTORSPX); 
+    leftController = new Spark(RobotMap.DRIVETRAIN_LEFT_FRONT_PWMVICTORSPX);
+    rightController = new Spark(RobotMap.DRIVETRAIN_RIGHT_FRONT_PWMVICTORSPX); 
 
-    differentialDrive = new DifferentialDrive(leftFrontPWMVICTORSPX, rightFrontPWMVICTORSPX);
+    differentialDrive = new DifferentialDrive(leftController, rightController);
   }
 
   public void arcadeDrive(double moveSpeed, double rotateSpeed) {
