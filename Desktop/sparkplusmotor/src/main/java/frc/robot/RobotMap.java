@@ -20,7 +20,7 @@ public class RobotMap {
   // public static int leftMotor = 1;
   // public static int rightMotor = 2;
 
-  // SPARKs: 
+  // Victor Motor controllers for drivetrain: 
   public static final int DRIVETRAIN_LEFT_FRONT_PWMVICTORSPX = 0;
  // public static final int DRIVETRAIN_LEFT_BACK_SPARK = 8;
   public static final int DRIVETRAIN_RIGHT_FRONT_PWMVICTORSPX = 1;
@@ -41,6 +41,7 @@ public class RobotMap {
   public static final int SPINMOTOR_SPIN_MOTOR_1_TALONSRX1 = 1;
   public static final int LIMIT_SWITCH_TOP =1;
   public static final int LIMIT_SWITCH_BOTTOM =0 ;
+  public static final int POTENTIOMETER = 2; // PWM port
 
   // intake 
   public static final int INTAKE_MOTOR_PWMVICTORSPX_1 = 2;

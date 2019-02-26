@@ -20,34 +20,26 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.commands.SpinTheMotor;
 
 /**
- * Add your docs here.
+ * SpinMotor is the subsystem which operates arm movement. 
  */
 
 public class SpinMotor extends Subsystem {
 
-	/*public  SpinMotor1(){
-        Victor SpinMotor1 =null;
-        SpinMotor1 = new Victor(RobotMap.SPINMOTOR_SPIN_MOTOR_1_VICTOR);
-    }
-    */
     DigitalInput limitSwitchTop =  new DigitalInput(RobotMap.LIMIT_SWITCH_TOP);
     DigitalInput limitSwitchBottom =  new DigitalInput(RobotMap.LIMIT_SWITCH_BOTTOM);
     public TalonSRX SpinMotor1 = null;
     //Counter counter = new Counter(limitSwitch);
+    Potentiometer pot = new AnalogPotentiometer(0,360,30);
 
     public SpinMotor(){
     //PWMVictorSPX SpinMotor1 = new PWMVictorSPX(3);
-    SpinMotor1 = new TalonSRX(RobotMap.SPINMOTOR_SPIN_MOTOR_1_TALONSRX1);
-    
-  /* SpeedController spinTalonSRX = null;
-    SpeedControllerGroup SpinMotor  new SpeedControllerGroup(SPINMOTOR_SPINTALON_TALON)
-public SpinMotor(SpeedController SpinmMotor) {
-
-    spinTalonSRX = new TalonSRX(RobotMap.SPINMOTOR_SPINTALON_TALON);
-  }
-*/
+        SpinMotor1 = new TalonSRX(RobotMap.SPINMOTOR_SPIN_MOTOR_1_TALONSRX1);
     }
     
+    public double getArmAngle() {
+        return pot.get();
+    }
+
     public boolean isTopSwitchSet() {
         //int valueOfSwitch = counter.get();
         boolean valueOfSwitch = limitSwitchTop.get();
@@ -69,7 +61,6 @@ public SpinMotor(SpeedController SpinmMotor) {
    
     public void Spin(double SpinValue){
         SpinMotor1.set(ControlMode.PercentOutput, SpinValue);
-
     }
    
             
