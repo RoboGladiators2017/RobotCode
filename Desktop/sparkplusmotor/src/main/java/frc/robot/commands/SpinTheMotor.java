@@ -30,24 +30,20 @@ public class SpinTheMotor extends Command {
   // Called once when the command executes
   @Override
   protected void initialize() {
-    Robot.m_spinmotor.initializeCounter();
+    //Robot.m_spinmotor.initializeCounter();
   }
 
   @Override
   protected void execute() {
     double rightTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_COUNTERCLOCKWISE);
     double leftTriggerSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_CLOCKWISE);
+    // scale trigger input to be 35% of maximum
     rightTriggerSpeed = rightTriggerSpeed*0.35;
     leftTriggerSpeed = leftTriggerSpeed*0.35;
 
-    if (-rightTriggerSpeed < 0) {
-      System.out.println("" + rightTriggerSpeed + " " + leftTriggerSpeed);
-    }
-   // Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
-/*if (leftTriggerSpeed >0 && -rightTriggerSpeed > 0) {
-  Robot.m_spinmotor.Spin(0);
-
-}*/
+    //if (-rightTriggerSpeed < 0) {
+    //  System.out.println("" + rightTriggerSpeed + " " + leftTriggerSpeed);
+    //}
     if (!(Robot.m_spinmotor.isTopSwitchSet()) && !(Robot.m_spinmotor.isBottomSwitchSet())) {
       // Robot.m_spinmotor.Spin(0);
       Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
@@ -67,14 +63,9 @@ public class SpinTheMotor extends Command {
     }
     Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed); //test with and without this line. does the motor twitch?
 
-    /*
-     * if(rightTriggerSpeed < 0){
+    /* if(rightTriggerSpeed < 0){
      * System.out.println(""+rightTriggerSpeed+" "+leftTriggerSpeed); }
      */
-    // if(Robot.m_limitswitch.limitSwitch.get() == true)
-    // {
-    // end();
-    // }
 
   }
 
