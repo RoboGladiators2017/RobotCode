@@ -25,6 +25,8 @@ public class armUpPosition extends Command {
     // TO DO: A. constrain the value of MotorSpeed to max and min values of the motor
     //        B. create some margin for error so it does not have to get to the
     //           exact value or else it will keep bouncing up and down till something breaks
+    //        C. check buttons on controller corresponding to 4,5, and 6
+    //        D. determine if end should be called when desired position reached
 
     double K = 1; // set the value of K to scale the amount of motor movement required
     double desiredPosition = 90; // 90 degrees above ground
