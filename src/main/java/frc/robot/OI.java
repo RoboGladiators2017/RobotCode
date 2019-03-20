@@ -49,10 +49,12 @@ public class OI {
 
     D1.whileHeld(new IntakeBallOut(1.0));
     D2.whileHeld(new IntakeBallIn());
-
+    D4.whileHeld(new potc());
+    
     D1_2.whileHeld(new IntakeBallOut(1.0));
     D2_2.whileHeld(new IntakeBallIn());
     D3_2.whileHeld(new IntakeBallOut(0.5));
+  
     // OPTION 2: use a set of buttons, one to start and one to stop
     /*IntakeBallIn ballIn = new IntakeBallIn();
     IntakeBallOut ballOut = new IntakeBallOut();

@@ -6,11 +6,12 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
-
+import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 import frc.robot.subsystems.*;
+import edu.wpi.first.wpilibj.AnalogPotentiometer;
 
 /**
  * Add your docs here.
@@ -50,6 +51,12 @@ public class SpinTheMotor extends Command {
   Robot.m_spinmotor.Spin(0);
 
 }*/
+//AnalogPotentiometer pot;
+//pot = new AnalogPotentiometer(0, 360, 30);
+//AnalogInput ai = new AnalogInput(RobotMap.POT_TALON);
+//pot = new AnalogPotentiometer(ai, 360, 30);
+//System.out.println("potentiometor " +pot.get());
+
     if (!(Robot.m_spinmotor.isTopSwitchSet()) && !(Robot.m_spinmotor.isBottomSwitchSet())) {
       // Robot.m_spinmotor.Spin(0);
       Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
