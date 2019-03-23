@@ -51,12 +51,12 @@ public class Drivetrain extends Subsystem {
     //System.out.println("Before: " + rotateSpeed);
     // square the values of moveSpeed and rotateSpeed to dampen
     // keep negative values negative
-    if(moveSpeed < 0) {
+    /*if(moveSpeed < 0) {
       moveSpeed = - (moveSpeed * moveSpeed);
     }
     else {
       moveSpeed = moveSpeed * moveSpeed;
-    }
+    }*/
 
     /*if(rotateSpeed < 0) {
       rotateSpeed = - (rotateSpeed * rotateSpeed);

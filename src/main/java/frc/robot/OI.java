@@ -34,7 +34,7 @@ public class OI {
   Button D1_2 = new JoystickButton(driverController2, 1);
   Button D2_2 = new JoystickButton(driverController2, 2);
   Button D3_2 = new JoystickButton(driverController2, 3);
-  //Button D7 = new JoystickButton(driverController, 7);
+  Button D4_2 = new JoystickButton(driverController2, 4);
   //Button D8 = new JoystickButton(driverController, 8);
   //Button D9 = new JoystickButton(driverController, 9);
   //Button D10 = new JoystickButton(driverController, 10);
@@ -47,13 +47,14 @@ public class OI {
     //D1_2.toggleWhenPressed(new IntakeBallIn());
   //D2_2.toggleWhenPressed(new IntakeBallOut());
 
-    D1.whileHeld(new IntakeBallOut(1.0));
-    D2.whileHeld(new IntakeBallIn());
-    D4.whileHeld(new potc());
+    //D1.whileHeld(new IntakeBallOut(1.0));
+   // D2.whileHeld(new IntakeBallIn());
+   // D4.whileHeld(new potc());
     
     D1_2.whileHeld(new IntakeBallOut(1.0));
     D2_2.whileHeld(new IntakeBallIn());
     D3_2.whileHeld(new IntakeBallOut(0.5));
+    D4_2.whileHeld(new potc());
   
     // OPTION 2: use a set of buttons, one to start and one to stop
     /*IntakeBallIn ballIn = new IntakeBallIn();

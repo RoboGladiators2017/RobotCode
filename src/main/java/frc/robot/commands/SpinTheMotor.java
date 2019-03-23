@@ -42,10 +42,11 @@ public class SpinTheMotor extends Command {
     double leftTriggerSpeed2 = Robot.m_oi.driverController2.getRawAxis(RobotMap.DRIVER_CONTROLLER_CLOCKWISE);
     rightTriggerSpeed = rightTriggerSpeed2>rightTriggerSpeed ? rightTriggerSpeed2 : rightTriggerSpeed; // find max of the two
     leftTriggerSpeed  =  leftTriggerSpeed2> leftTriggerSpeed ? leftTriggerSpeed2  : leftTriggerSpeed; // find max of the two
-    rightTriggerSpeed = rightTriggerSpeed*0.35;
-    leftTriggerSpeed = leftTriggerSpeed*0.35;
+    rightTriggerSpeed = rightTriggerSpeed*0.25;
+    leftTriggerSpeed = leftTriggerSpeed*0.45;
 
-    System.out.println("arm motor triggers r=" + rightTriggerSpeed + " L=" + leftTriggerSpeed);
+    //System.out.println("arm motor triggers r=" + rightTriggerSpeed + " L=" + leftTriggerSpeed);
+    Robot.m_spinmotor.potValue();
    // Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
 /*if (leftTriggerSpeed >0 && -rightTriggerSpeed > 0) {
   Robot.m_spinmotor.Spin(0);

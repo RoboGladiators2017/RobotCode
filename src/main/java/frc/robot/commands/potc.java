@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class potc extends Command {
+  double dPadDown = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_SLOW_Down);
   public potc() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -30,7 +31,8 @@ public class potc extends Command {
   @Override
   protected void execute() {
     double potv =   Robot.m_spinmotor.potValue();
-    /*if (!(Robot.m_spinmotor.isTopSwitchSet()) && !(Robot.m_spinmotor.isBottomSwitchSet())) {
+
+/*    if (!(Robot.m_spinmotor.isTopSwitchSet()) && !(Robot.m_spinmotor.isBottomSwitchSet())) {
       Robot.m_spinmotor.Spin(0);
       //Robot.m_spinmotor.Spin(leftTriggerSpeed - rightTriggerSpeed);
     }
@@ -47,15 +49,20 @@ public class potc extends Command {
       Robot.m_spinmotor.Spin(0);
       return;
     }
-    */ 
+    */
     
-  if(potv > 210.0) {
-  Robot.m_spinmotor.Spin(0.5);
-  }
-  if(potv < 210.0) {
-    Robot.m_spinmotor.Spin(-0.5);
+
+    if((potv < 255) && !(Robot.m_spinmotor.isTopSwitchSet())) {
+      Robot.m_spinmotor.Spin(0.45);
+    }
+    else if((potv < 260 ) && !(Robot.m_spinmotor.isTopSwitchSet())) {
+      Robot.m_spinmotor.Spin(0.15);
+    }
+    else {
+      Robot.m_spinmotor.Spin(0);
     }
   }
+
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {

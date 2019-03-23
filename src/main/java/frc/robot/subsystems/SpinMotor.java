@@ -54,6 +54,7 @@ public class SpinMotor extends Subsystem {
          * 
          * spinTalonSRX = new TalonSRX(RobotMap.SPINMOTOR_SPINTALON_TALON); }
          */
+       
     }
     public double potValue(){
         System.out.println("potentiometer "+pot.get());

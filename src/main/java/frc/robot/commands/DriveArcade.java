@@ -32,6 +32,10 @@ public class DriveArcade extends Command {
   protected void execute() {
     double moveSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS);
     double rotateSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_AXIS);
+    if(Robot.m_oi.driverController.getRawButton(6)){
+      moveSpeed  *=  0.5;
+      rotateSpeed *= 0.70;
+    }
     // Controllers return an axis value between 1 and -1 to 
     // indicate how far the joystick is pushed up or down
 
